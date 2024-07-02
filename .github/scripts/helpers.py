@@ -82,8 +82,8 @@ def sl_list_assets(sl_org, sl_pspace, sl_project, sl_auth, asset_type):
     if response["http_status_code"] == 200:
         return response["response_map"]["entries"]
     else:
-        exit(response)
-
+        exit("# Invalid request - SnapLogic list assets endpoint! #")
+        
 def sl_filter_tracked_assets(assets):
     # This function filters only tracked assets.
     return list(filter(lambda x: "git" in x["metadata"],assets))
@@ -245,12 +245,14 @@ def pete_generate_documentation(pete_key, pete_token, sl_org, sl_pspace, sl_proj
     print(f"-- Genarting documenation. --")
     print(f"\tSLOrganization: {sl_org}\n\tSLProjectSpace: {sl_pspace}\n\tSLProject: {sl_project}\n\tPETEMainPage: {pete_main_page}")
     # Structure request
-    url = "https://iwdg-phase2-prod-fa.azurewebsites.net/api/documentation"
     if pete_target_system == "Confluence":
+        url = "https://iwdg-phase2-prod-fa.azurewebsites.net/api/documentation"
         payload = pete_confluence_body(sl_org, sl_pspace, sl_project, pete_main_page)
     elif pete_target_system == "Sharepoint":
+        url = "https://iwdg-phase2-prod-fa.azurewebsites.net/api/spdocumentation"
         payload = pete_sharepoint_body(sl_org, sl_pspace, sl_project, pete_main_page)
     else:
+        url = "https://iwdg-phase2-prod-fa.azurewebsites.net/api/pdfdocumentation"
         payload = pete_pdf_body(sl_org, sl_pspace, sl_project)
     headers = {
         "Authorization": f"Bearer {pete_token}",
@@ -375,3 +377,4 @@ def gh_run_workflow(gh_ref, gh_token, workflow):
     if response.status_code != 204 and response.status_code != 404:
         print(response)
         exit("# Invalid request - GitHub get latest release endpoint! #")
+
