@@ -70,7 +70,6 @@ jobs:
         run: python .github/scripts/sl-update-tasks.py "${{ secrets.SL_EMAIL }}" "${{ secrets.SL_PW }}" "$SL_TARGET_ORG" "$SL_TARGET_PSPACE" "$SL_TARGET_PROJECT"
 
   pete-upsert-documentation:
-    needs: sl-run-test-pipeline
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
