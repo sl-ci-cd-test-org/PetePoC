@@ -82,7 +82,7 @@ def sl_list_assets(sl_org, sl_pspace, sl_project, sl_auth, asset_type):
     if response["http_status_code"] == 200:
         return response["response_map"]["entries"]
     else:
-        exit("# Invalid request - SnapLogic list assets endpoint! #")
+        exit(response)
 
 def sl_filter_tracked_assets(assets):
     # This function filters only tracked assets.
