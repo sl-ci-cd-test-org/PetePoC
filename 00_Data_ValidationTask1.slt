@@ -1,6 +1,6 @@
 {
     "job_class": "PipelineJob",
-    "job_name": "00_Data_ValidationTask",
+    "job_name": "00_Data_ValidationTask1",
     "note": "",
     "parameters": {
         "enabled": true,
