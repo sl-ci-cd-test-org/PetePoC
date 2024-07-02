@@ -83,7 +83,7 @@ def sl_list_assets(sl_org, sl_pspace, sl_project, sl_auth, asset_type):
         return response["response_map"]["entries"]
     else:
         exit("# Invalid request - SnapLogic list assets endpoint! #")
-
+        
 def sl_filter_tracked_assets(assets):
     # This function filters only tracked assets.
     return list(filter(lambda x: "git" in x["metadata"],assets))
@@ -377,3 +377,4 @@ def gh_run_workflow(gh_ref, gh_token, workflow):
     if response.status_code != 204 and response.status_code != 404:
         print(response)
         exit("# Invalid request - GitHub get latest release endpoint! #")
+
