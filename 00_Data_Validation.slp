@@ -36,7 +36,7 @@
         "input": {
             "11111111-1111-1111-1111-000000000000_input0": {
                 "label": {
-                    "value": "Prepare data - input0"
+                    "value": "Prepare - data - input0"
                 },
                 "view_type": {
                     "value": "document"
@@ -249,7 +249,7 @@
                 },
                 "info": {
                     "label": {
-                        "value": "Prepare data"
+                        "value": "Prepare - data"
                     },
                     "notes": {}
                 },
