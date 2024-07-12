@@ -46,7 +46,7 @@
         "output": {
             "11111111-1111-1111-1111-000000000001_output0": {
                 "label": {
-                    "value": "Data Validation - output0"
+                    "value": "Data - Validation - output0"
                 },
                 "view_type": {
                     "value": "document"
@@ -363,7 +363,7 @@
                 },
                 "info": {
                     "label": {
-                        "value": "Data Validation"
+                        "value": "Data - Validation"
                     },
                     "notes": {}
                 },
